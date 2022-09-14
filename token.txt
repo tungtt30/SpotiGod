@@ -1,0 +1,16 @@
+ACCOUNT {
+  provider: 'spotify',
+  type: 'oauth',
+  providerAccountId: '21f7k3nvypaebp2imzbohrixi',
+  access_token: 'BQC4KCZ26pCpnAo4zBq6bV1m6ceWuR-bqKCiI2J1i2s_fV7IMMZrqn4AQlR5o5IdWygwx-n0hWB8F-i8sYNTSUKrPVn6n2QRY7uxOQESXnOnl58GC2iRkSeabV4dfCI9gPHdltIzMTmfg0PuJwdgQ-icSLXykA-GL1kneNnQztmqHw1U_RN83e4rF1Yp4L2tEtNgZR7tglz02PS0r2GHpb1vojr7YcdA7KCDfIWKwFVSkjxZyjeuf4oDT3IqKdTL',
+  token_type: 'Bearer',
+  expires_at: 1663093577,
+  refresh_token: 'AQAK8xN2-1IwnvSaqWxE1LUq4nw7zHNxsbIR17-sPBRXj3Bh3kS47wIfBstlKxRZSScRFZixKDKTWwTurRon5-WpXT9l7cZ5UMeDY7lr_ADAfFZc_3k2lQU6i1KJBCRPYYw',
+  scope: 'playlist-read-private playlist-read-collaborative streaming user-modify-playback-state user-library-read user-follow-read user-read-playback-state user-read-currently-playing user-read-email user-read-recently-played user-read-private user-top-read'     
+}
+USER {
+  id: '21f7k3nvypaebp2imzbohrixi',
+  name: 'Trịnh Thanh Tùng',
+  email: 'tungchipsctn2@gmail.com',
+  image: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=953378731487875&height=300&width=300&ext=1665646742&hash=AeSwiShZI4tjGvjbMLQ'
+}
