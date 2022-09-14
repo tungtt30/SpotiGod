@@ -5,3 +5,8 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: ['platform-lookaside.fbsbx.com', 'mosaic.scdn.co', 'i.scdn.co'],
+  }
+}
