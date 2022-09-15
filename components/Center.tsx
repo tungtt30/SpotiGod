@@ -5,6 +5,7 @@ import Image from "next/image";
 import userIcon from "../assets/user-icon.png";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { pickRandom } from "../utils/pickRandom";
+import Songs from "./Songs";
 
 const colours = [
   "from-indigo-500",
@@ -67,6 +68,9 @@ const Center = () => {
           </>
         )}
       </section>
+      <div>
+        <Songs />
+      </div>
     </div>
   );
 };
