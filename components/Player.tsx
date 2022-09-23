@@ -10,11 +10,15 @@ import {
 import useSpotify from "./hooks/useSpotify";
 import { useSongContext } from "../contexts/SongContext";
 import { SongReducerActionType } from "../types";
+import Image from "next/image";
 
 const isPlaying = false;
 
 const Player = () => {
-  const { songContextState, dispatch } = useSongContext();
+  const {
+    songContextState: { isPlaying, selectedSong },
+    dispatch,
+  } = useSongContext();
   const spotifyApi = useSpotify();
   const handlePlayPause = async () => {
     const response = await spotifyApi.getMyCurrentPlaybackState();
@@ -36,7 +40,25 @@ const Player = () => {
 
   return (
     <div className="h-24 bg-gradient-to-b from-black to-gray-800 grid grid-cols-3 text-xs md:text-base px-2 md:px-8">
-      <div className="flex items-center space-x-4">SONG</div>
+      <div className="flex items-center space-x-4">
+        {selectedSong && (
+          <>
+            <div className="hidden md:block">
+              {" "}
+              <Image
+                src={selectedSong.album.images[0].url}
+                alt={`${selectedSong.name}`}
+                height="40px"
+                width="40px"
+              />
+            </div>
+            <div>
+              <h3>{selectedSong.name}</h3>
+              <p>{selectedSong.artists[0].name}</p>
+            </div>
+          </>
+        )}
+      </div>
 
       {/* icon */}
       <div className="flex justify-evenly items-center">

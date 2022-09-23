@@ -55,8 +55,27 @@ const SongContextProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [spotifyApi, session]);
 
+  useEffect(() => {
+    const getCurrentPlayingSong = async () => {
+      const songInfo = await spotifyApi.getMyCurrentPlayingTrack();
+      if (!songInfo.body) return;
+      dispatch({
+        type: SongReducerActionType.SetCurrentPlayingSong,
+        payload: {
+          selectedSongId: songInfo.body.item?.id,
+          selectedSong: songInfo.body.item as SpotifyApi.TrackObjectFull,
+          isPlaying: songInfo.body.is_playing,
+        },
+      });
+    };
+
+    if (spotifyApi.getAccessToken()) {
+      getCurrentPlayingSong();
+    }
+  }, [spotifyApi, session]);
+
   const songContextProviderData: ISongContext = {
-    songContextState: defaultSongContextState,
+    songContextState,
     dispatch,
   };
   return (

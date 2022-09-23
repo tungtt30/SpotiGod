@@ -20,6 +20,14 @@ export const songReducer = (
         ...state,
         isPlaying: payload,
       };
+
+    case SongReducerActionType.SetCurrentPlayingSong:
+      return {
+        ...state,
+        selectedSongId: payload.selectedSongId,
+        selectedSong: payload.selectedSong,
+        isPlaying: payload.isPlaying,
+      };
     default:
       return state;
   }
